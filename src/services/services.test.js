@@ -26,7 +26,7 @@ const testData = [
 // const globalFetch = global.fetch;
 
 describe("Testing services getCharacters()", () => {
-  expect(true).toBe(true);
+  it("will pass", () => expect(true).toBe(true));
 });
 
 // afterAll(() => {

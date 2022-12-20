@@ -14,5 +14,5 @@ const testData = {
 };
 
 describe("Testing <CharacterCard/>", () => {
-  expect(true).toBeTruthy();
+  it("will pass", () => expect(true).toBe(true));
 });
