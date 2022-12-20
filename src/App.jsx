@@ -13,6 +13,10 @@ const App = () => {
     setCharArray(data)
   }
 
+  const getSearchTerm = (event) =>{
+    console.log(event.target.value)
+  }
+
 useEffect(()=>{
   getCharacters()
 },[])
@@ -20,7 +24,7 @@ useEffect(()=>{
   return (
 
     <div className="App">
-      <Nav />
+      <Nav getSearchTerm={getSearchTerm}/>
       <CharacterContainer charArray={charArray}/>
     </div>
   );
