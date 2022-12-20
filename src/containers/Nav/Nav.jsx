@@ -7,10 +7,10 @@ const Nav = () => {
   return (
     <div className='nav'>
       <SearchBox />
-      <Checkbox />
-      <Checkbox />
-      <Checkbox />
-      <Checkbox />
+      <Checkbox family="Targaryen"/>
+      <Checkbox family="Stark"/>
+      <Checkbox family="Lannister"/>
+      <Checkbox family="Baratheon"/>
     </div>
   )
 }

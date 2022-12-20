@@ -1,9 +1,15 @@
 import React from 'react'
 import "./SearchBox.scss";
 const Searchbox = () => {
+
+  const getSearchTerm = (event) =>{
+    console.log(event.target.value)
+  }
+
+
   return (
     <div>
-      <input type="text" placeholder="Search.."/>
+      <input onInput={getSearchTerm} type="text" placeholder="Search.."/>
     </div>
   )
 }
