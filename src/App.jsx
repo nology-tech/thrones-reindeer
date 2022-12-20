@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import { getCharacters } from "./services/services";
 import CharacterCards from "./containers/CharacterCards/CharacterCards";
 import Nav from "./containers/Nav/Nav";
-import { getCharacters } from "./services/services";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);

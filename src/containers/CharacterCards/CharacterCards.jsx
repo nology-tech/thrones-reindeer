@@ -7,7 +7,7 @@ const CharacterCards = ({ characters }) => {
     return <CharacterCard key={character.id} character={character} />;
   });
 
-  return <div className="character-container">{cardJSX.length > 0 ? cardJSX : <p>No results found</p>}</div>;
+  return <div className="character-cards">{cardJSX.length > 0 ? cardJSX : <p>No results found</p>}</div>;
 };
 
 export default CharacterCards;

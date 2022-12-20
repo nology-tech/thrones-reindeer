@@ -1,9 +1,7 @@
-.character-container{
-  display:flex;
-  flex-direction: row;
+.character-cards {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
-  width: 85%;
-  
+  background-color: #f0eddc;
+  min-height: 90vh;
 }
