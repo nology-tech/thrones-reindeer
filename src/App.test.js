@@ -124,4 +124,16 @@ describe("Testing  <App/>", () => {
     const character = await screen.findByText(/robert baratheon/i);
     expect(character).toBeInTheDocument();
   });
+
+  it("should filter characters by search when typed", async () => {
+    render(<App />);
+
+    const input = await screen.findByRole("textbox");
+
+    await userEvent.type(input, "ar");
+
+    const cards = await screen.findAllByRole("heading");
+
+    expect(cards.length).toBe(4);
+  });
 });
