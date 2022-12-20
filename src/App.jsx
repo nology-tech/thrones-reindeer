@@ -5,6 +5,7 @@ import Nav from './containers/Nav/Nav';
 
 const App = () => {
   const [charArray, setCharArray]= useState([]);
+  const [searchTerm, setSearchTerm]= useState("")
 
   const getCharacters = async () => {
     const response = await fetch("https://thronesapi.com/api/v2/Characters")
@@ -14,7 +15,16 @@ const App = () => {
   }
 
   const getSearchTerm = (event) =>{
-    console.log(event.target.value)
+   setSearchTerm(event.target.value)
+  }
+
+  const filterCharacters = () => {
+    const filteredArray = charArray.filter(character => {
+      if((character.fullName.toLowerCase()).includes(searchTerm.toLowerCase())){
+        return character;
+      }
+    })
+    return filteredArray;
   }
 
 useEffect(()=>{
@@ -25,7 +35,7 @@ useEffect(()=>{
 
     <div className="App">
       <Nav getSearchTerm={getSearchTerm}/>
-      <CharacterContainer charArray={charArray}/>
+      <CharacterContainer charArray={filterCharacters()}/>
     </div>
   );
 }
