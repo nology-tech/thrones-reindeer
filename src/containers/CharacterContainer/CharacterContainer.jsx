@@ -4,9 +4,9 @@ import "./CharacterContainer.scss"
 
 const CharacterContainer = ({charArray}) => {
 
-  const cardArray = charArray.map(character => {
+  const cardArray = charArray.map((character) => {
     return (
-      <CharacterCard character={character}/>
+      <CharacterCard key={character.id} character={character}/>
     )
   })
   
