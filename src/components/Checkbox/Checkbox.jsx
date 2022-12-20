@@ -1,8 +1,12 @@
 import React from 'react'
+import "./Checkbox.scss";
 
-const Checkbox = () => {
+const Checkbox = ({family}) => {
   return (
-    <div>Checkbox</div>
+    <div>
+      <label htmlFor={family}>{family}</label>
+      <input type="checkbox" name={family} id={family} />
+    </div>
   )
 }
 
