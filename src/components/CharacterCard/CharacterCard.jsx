@@ -1,16 +1,15 @@
-import React from 'react'
-import "./CharacterCard.scss"
+import React from "react";
+import "./CharacterCard.scss";
 
-const CharacterCard = ({character}) => {
-  
+const CharacterCard = ({ character }) => {
   return (
-    <div className='character-card'>
+    <div className="character-card">
       <h1>{character.fullName}</h1>
-      <h2>{character.family}</h2>
+      <p>{character.family}</p>
       <img className="character-card__image" src={character.imageUrl} alt={character.fullName} />
-      <h3>{character.title}</h3>
+      <p>{character.title}</p>
     </div>
-  )
-}
+  );
+};
 
-export default CharacterCard
+export default CharacterCard;
