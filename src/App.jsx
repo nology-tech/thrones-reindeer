@@ -27,6 +27,10 @@ const App = () => {
     return filteredArray;
   }
 
+  const getCheckboxValue = (event) =>{
+      console.log(event.target.id)
+  }
+
 useEffect(()=>{
   getCharacters()
 },[])
@@ -34,7 +38,7 @@ useEffect(()=>{
   return (
 
     <div className="App">
-      <Nav getSearchTerm={getSearchTerm}/>
+      <Nav getSearchTerm={getSearchTerm} getCheckboxValue={getCheckboxValue}/>
       <CharacterContainer charArray={filterCharacters()}/>
     </div>
   );
