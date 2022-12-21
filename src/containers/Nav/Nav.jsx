@@ -1,18 +1,19 @@
-import React from 'react'
-import Checkbox from '../../components/Checkbox/Checkbox'
-import SearchBox from '../../components/SearchBox/SearchBox'
-import "./Nav.scss"
+import React from "react";
+import Checkbox from "../../components/Checkbox/Checkbox";
+import SearchBox from "../../components/SearchBox/SearchBox";
+import "./Nav.scss";
 
-const Nav = ({getSearchTerm, getCheckboxValue}) => {
+const Nav = ({ houseFilters, handleInput, handleCheckbox, searchTerm }) => {
+  const checkboxJSX = Object.keys(houseFilters).map(house => (
+    <Checkbox key={house} family={house} checked={houseFilters[house]} handleCheckbox={handleCheckbox} />
+  ));
+
   return (
-    <div className='nav'>
-      <SearchBox getSearchTerm={getSearchTerm}/>
-      <Checkbox family="Targaryen" getCheckboxValue={getCheckboxValue}/>
-      <Checkbox family="Stark" getCheckboxValue={getCheckboxValue}/>
-      <Checkbox family="Lannister" getCheckboxValue={getCheckboxValue}/>
-      <Checkbox family="Baratheon" getCheckboxValue={getCheckboxValue}/>
+    <div className="nav">
+      <SearchBox handleInput={handleInput} searchTerm={searchTerm} />
+      {checkboxJSX}
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

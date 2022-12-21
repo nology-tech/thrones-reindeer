@@ -1,12 +1,8 @@
-import React from 'react'
+import React from "react";
 import "./SearchBox.scss";
 
-const Searchbox = ({getSearchTerm}) => {
-  return (
-    <div>
-      <input onInput={getSearchTerm} type="text" placeholder="Search.."/>
-    </div>
-  )
-}
+const Searchbox = ({ handleInput, searchTerm }) => {
+  return <input className="search" onInput={handleInput} type="text" placeholder="Search.." value={searchTerm} />;
+};
 
-export default Searchbox
+export default Searchbox;

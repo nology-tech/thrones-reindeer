@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
+import { capitalizeString } from "../../utilities/utilities";
 import "./Checkbox.scss";
 
-const Checkbox = ({family}) => {
+const Checkbox = ({ family, handleCheckbox, checked }) => {
   return (
     <div>
-      <input type="checkbox" name={family} id={family} />
-      <label htmlFor={family}>{family}</label>
+      <input onChange={handleCheckbox} type="checkbox" checked={checked} name={family} id={family} />
+      <label htmlFor={family}>{capitalizeString(family)}</label>
     </div>
-  )
-}
+  );
+};
 
-export default Checkbox
+export default Checkbox;
