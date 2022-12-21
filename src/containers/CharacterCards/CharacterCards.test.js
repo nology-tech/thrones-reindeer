@@ -25,6 +25,33 @@ const testData = [
 ];
 
 describe("Testing <CharacterCards/>", () => {
-  it("will pass", () => expect(true).toBe(true));
+  it("should display character cards and does not display no results found", () => {
+    render(<CharacterCards characters={testData} />);
 
+    // screen.getAllBy*
+    // ALLOWS US TO GET MULTIPLES -> [] OF ELEMENTS
+    // - ERROR IF NONE ARE FOUND
+    const headings = screen.getAllByRole("heading");
+
+    // CHECK THE LENGTH OF THE
+    expect(headings.length).toBe(2);
+
+    // screen.queryBy*
+    // ALLOWS YOU TO GET ONE ELEMENT
+    // - RETURN NULL IF IT DOESN'T EXIST
+
+    const noResultsFound = screen.queryByText(/no results found/i);
+
+    // CHECKING THAT THE TEXT IS NOT DISPLAYED
+    expect(noResultsFound).toBeNull();
+  });
+
+  it("should display no results found when given empty array", () => {
+    // GIVE EMPTY ARRAY
+    render(<CharacterCards characters={[]} />);
+
+    const noResultsFound = screen.getByText(/no results found/i);
+    // NO RESULTS SHOULD BE DISPLAYED
+    expect(noResultsFound).toBeInTheDocument();
+  });
 });

@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
 
+// MOCK A FUNCTION FROM A FILE
 jest.mock("./services/services", () => {
   return {
     getCharacters: () => {
@@ -68,6 +69,12 @@ describe("Testing  <App/>", () => {
   it("should render 5 character cards returned from mock API", async () => {
     render(<App />);
 
+    // screen.findBy
+    // IS ASYNCHRONOUS
+    // - WAIT THE STATE TO BE SET
+    // - AWAIT
+
+    // const cards =  screen.getAllByRole("heading");
     const cards = await screen.findAllByRole("heading");
 
     expect(cards.length).toBe(5);
@@ -80,13 +87,18 @@ describe("Testing  <App/>", () => {
       name: /targaryen/i,
     });
 
-    await userEvent.click(checkBox);
+    userEvent.click(checkBox);
 
     const character = await screen.findByText(/daenerys targaryen/i);
+
     expect(character).toBeInTheDocument();
+
+    const cards = await screen.findAllByRole("heading");
+
+    expect(cards.length).toBe(1);
   });
 
-  it("should filter characters by Stark house once clicked", async () => {
+  xit("should filter characters by Stark house once clicked", async () => {
     render(<App />);
 
     const checkBox = await screen.findByRole("checkbox", {
@@ -99,7 +111,7 @@ describe("Testing  <App/>", () => {
     expect(character).toBeInTheDocument();
   });
 
-  it("should filter characters by Lannister house once clicked", async () => {
+  xit("should filter characters by Lannister house once clicked", async () => {
     render(<App />);
 
     const checkBox = await screen.findByRole("checkbox", {
@@ -112,7 +124,7 @@ describe("Testing  <App/>", () => {
     expect(character).toBeInTheDocument();
   });
 
-  it("should filter characters by Baratheon house once clicked", async () => {
+  xit("should filter characters by Baratheon house once clicked", async () => {
     render(<App />);
 
     const checkBox = await screen.findByRole("checkbox", {
@@ -130,7 +142,7 @@ describe("Testing  <App/>", () => {
 
     const input = await screen.findByRole("textbox");
 
-    await userEvent.type(input, "ar");
+    userEvent.type(input, "ar");
 
     const cards = await screen.findAllByRole("heading");
 

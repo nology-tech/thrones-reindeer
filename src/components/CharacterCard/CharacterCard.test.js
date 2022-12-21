@@ -14,5 +14,26 @@ const testData = {
 };
 
 describe("Testing <CharacterCard/>", () => {
-  it("will pass", () => expect(true).toBe(true));
+  it("should display given props", () => {
+    // LOADS THE COMPONENT
+    render(<CharacterCard character={testData} />);
+
+    // GETTING ELEMENTS
+    // screen.getBy*
+    // - WILL GET 1 ELEMENT
+    // - WILL ERROR IF MORE OR NONE ARE FOUND
+
+    const img = screen.getByRole("img", { name: /samwell tarly/i });
+
+    const heading = screen.getByRole("heading", { name: /samwell tarly/i });
+
+    const title = screen.getByText(/title: maester/i);
+
+    const family = screen.getByText(/family: house tarly/i);
+
+    expect(img).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
+    expect(title).toBeInTheDocument();
+    expect(family).toBeInTheDocument();
+  });
 });
