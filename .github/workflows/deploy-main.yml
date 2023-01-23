@@ -10,13 +10,5 @@ jobs:
     name: Check code
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Git config
-        run: git config --global user.email "${{ github.actor }}@users.noreply.github.com" && git config --global user.name "${{ github.actor }}"
-      - name: Install dependencies
-        run: npm install
-      - name: Run Build
-        run: npm run build
       - name: Deploy react to gh-pages
         uses: alainQtec/deploy-react-to-ghpages@1.0.0-beta.2
