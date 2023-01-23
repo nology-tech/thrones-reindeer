@@ -13,10 +13,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Git config
-        run: git config --local user.email "${{ github.actor }}@users.noreply.github.com" && git config --local user.name "${{ github.actor }}"
+        run: git config --global user.email "${{ github.actor }}@users.noreply.github.com" && git config --global user.name "${{ github.actor }}"
       - name: Install dependencies
         run: npm install
       - name: Run Build
-        run: git config --local user.email "${{ github.actor }}@users.noreply.github.com" && git config --local user.name "${{ github.actor }}" && npm run build
+        run: npm run build
       - name: Check deploy
         run: npm run deploy
