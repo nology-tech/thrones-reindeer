@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/thrones-reindeer/static/css/main.31cea773.css",
+    "main.js": "/thrones-reindeer/static/js/main.d698512a.js",
+    "static/js/787.91e85924.chunk.js": "/thrones-reindeer/static/js/787.91e85924.chunk.js",
+    "index.html": "/thrones-reindeer/index.html",
+    "main.31cea773.css.map": "/thrones-reindeer/static/css/main.31cea773.css.map",
+    "main.d698512a.js.map": "/thrones-reindeer/static/js/main.d698512a.js.map",
+    "787.91e85924.chunk.js.map": "/thrones-reindeer/static/js/787.91e85924.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31cea773.css",
+    "static/js/main.d698512a.js"
+  ]
+}
