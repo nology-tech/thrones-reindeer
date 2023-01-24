@@ -17,6 +17,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run Build
-        run: npm run build
-      - name: Check deploy
-        run: npm run deploy
+        run: npm run build    
+      - name: Deploy react to gh-pages
+        uses: alainQtec/deploy-react-to-ghpages@1.0.0-beta.2
