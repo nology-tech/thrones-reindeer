@@ -15,8 +15,8 @@ describe("Testing <Nav/>", () => {
     render(<Nav houseFilters={testData} handleInput={() => {}} handleCheckbox={() => {}} />);
 
     const checkboxes = screen.getAllByRole(`checkbox`);
-
-    expect(checkboxes.length).toBe(4);
+    // FAILING TEST
+    expect(checkboxes.length).toBe(0);
   });
 
   it("should render house checkboxes as unchecked", () => {
